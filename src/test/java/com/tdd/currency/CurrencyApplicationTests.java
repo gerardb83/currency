@@ -20,9 +20,14 @@ public class CurrencyApplicationTests {
 	@Test
 	public void testMultiplication() {
 		Dollar five = new Dollar(5);
-		five.times(2);
+		Dollar product = five.times(2);	
 		Integer expected = 10;
-		Integer actual = five.amount;
+		Integer actual = product.amount;
 		assertEquals(expected, actual);
+		
+		product = five.times(3);
+		Integer expected2 = 15;
+		Integer actual2 = product.amount;
+		assertEquals(expected2, actual2);
 	}
 }
