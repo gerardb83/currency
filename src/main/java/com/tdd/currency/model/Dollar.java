@@ -20,6 +20,11 @@ public class Dollar {
 	public Dollar times(int multiplyer) {
 		return new Dollar(amount * multiplyer);
 	}
+	
+	public boolean equals(Object object) {
+		Dollar dollar = (Dollar) object;
+		return amount == dollar.amount;
+	}
 
 
 }
