@@ -8,6 +8,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import com.tdd.currency.model.Bank;
+import com.tdd.currency.model.Expression;
 import com.tdd.currency.model.Money;
 
 @RunWith(SpringRunner.class)
@@ -39,5 +42,15 @@ public class CurrencyApplicationTests {
 		assertEquals("CHF", Money.franc(1).currency());
 	}
 	
+	@Test
+	public void testSimpleAddition() {
+		Money five = Money.dollar(5);
+		Expression sum = five.plus(five);
+		Bank bank = new Bank();
+		Money reduced = bank.reduce(sum, "USD");
+		assertEquals(Money.dollar(10), reduced);
+	}
+	
+
 	
 }

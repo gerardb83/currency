@@ -1,6 +1,6 @@
 package com.tdd.currency.model;
 
-public class Money {
+public class Money implements Expression {
 
 	protected Integer amount;
 	protected String currency;
@@ -35,6 +35,14 @@ public class Money {
 	@Override
 	public String toString() {
 		return amount + " " + currency;
+	}
+
+//	public Money plus(Money addend) {
+//		return new Money(amount + addend.amount, currency);
+//	}
+	
+	public Expression plus(Money addend) {
+		return new Money(amount + addend.amount, currency);
 	}
 	
 	
