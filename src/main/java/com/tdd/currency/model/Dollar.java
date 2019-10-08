@@ -6,13 +6,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Dollar {
+public class Dollar extends Money {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private Integer amount;
-	
+
 	public Dollar(int amount) {
 		this.amount = amount;
 	}
@@ -20,11 +19,5 @@ public class Dollar {
 	public Dollar times(int multiplyer) {
 		return new Dollar(amount * multiplyer);
 	}
-	
-	public boolean equals(Object object) {
-		Dollar dollar = (Dollar) object;
-		return amount == dollar.amount;
-	}
-
 
 }
