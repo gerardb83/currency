@@ -12,16 +12,16 @@ public class Dollar extends Money {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	public Dollar(int amount) {
-		this.amount = amount;
+	public Dollar(int amount, String currency) {
+		super(amount, currency);
 	}
 
 	public Money times(int multiplyer) {
-		return new Dollar(amount * multiplyer);
+		return Money.dollar(amount * multiplyer);
 	}
 
 	public String currency() {
-		return "USD";
+		return currency;
 	}
 
 }

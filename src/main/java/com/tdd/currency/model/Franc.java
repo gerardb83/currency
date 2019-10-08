@@ -2,15 +2,15 @@ package com.tdd.currency.model;
 
 public class Franc extends Money {
 	
-	public Franc(int amount) {
-		this.amount = amount;
+	public Franc(int amount, String currency) {
+		super(amount, currency);
 	}
 
-	public Franc times(int multiplyer) {
-		return new Franc(amount * multiplyer);
+	public Money times(int multiplyer) {
+		return Money.franc(amount * multiplyer);
 	}
 	
 	public String currency() {
-		return "CHF";
+		return currency;
 	}
 }
