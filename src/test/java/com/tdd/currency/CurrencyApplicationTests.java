@@ -22,15 +22,8 @@ public class CurrencyApplicationTests {
 	@Test
 	public void testMultiplication() {
 		Dollar five = new Dollar(5);
-		Dollar product = five.times(2);	
-		Integer expected = 10;
-		Integer actual = product.amount;
-		assertEquals(expected, actual);
-		
-		product = five.times(3);
-		Integer expected2 = 15;
-		Integer actual2 = product.amount;
-		assertEquals(expected2, actual2);
+		assertEquals(new Dollar(10), five.times(2));
+		assertEquals(new Dollar(15), five.times(3));
 	}
 	
 	@Test

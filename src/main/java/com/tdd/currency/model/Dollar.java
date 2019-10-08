@@ -11,7 +11,7 @@ public class Dollar {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-	public Integer amount;
+	private Integer amount;
 	
 	public Dollar(int amount) {
 		this.amount = amount;
