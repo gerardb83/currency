@@ -16,12 +16,12 @@ public class Money {
 				&& currency().equals(money.currency());
 	}
 
-	public static Dollar dollar(int amount) {
-		return new Dollar(amount, "USD");
+	public static Money dollar(int amount) {
+		return new Money(amount, "USD");
 	}
 	
 	public static Money franc(int amount) {
-		return new Franc(amount, "CHF");
+		return new Money(amount, "CHF");
 	}
 	
 	public String currency() {

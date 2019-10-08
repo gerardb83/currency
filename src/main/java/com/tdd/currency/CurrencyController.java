@@ -6,8 +6,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class CurrencyController {
-
-	private CurrencyRepo dao;
+//
+//	private CurrencyRepo dao;
 	
 	@RequestMapping("/")
 	public ModelAndView index() {
