@@ -1,6 +1,6 @@
 package com.tdd.currency.model;
 
-public abstract class Money {
+public class Money {
 
 	protected Integer amount;
 	protected String currency;
@@ -13,7 +13,7 @@ public abstract class Money {
 	public boolean equals(Object object) {
 		Money money = (Money) object;
 		return amount == money.amount 
-				&& getClass().equals(money.getClass());
+				&& currency().equals(money.currency());
 	}
 
 	public static Dollar dollar(int amount) {
@@ -28,5 +28,14 @@ public abstract class Money {
 		return currency;
 	}
 	
-	public abstract Money times(int multiplier);
+	public Money times(int multiplyer) {
+		return new Money(amount * multiplyer, currency);
+	}
+
+	@Override
+	public String toString() {
+		return amount + " " + currency;
+	}
+	
+	
 }
