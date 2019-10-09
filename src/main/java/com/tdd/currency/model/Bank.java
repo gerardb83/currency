@@ -4,12 +4,14 @@ import java.util.Hashtable;
 
 public class Bank {
 
+	@SuppressWarnings("rawtypes")
 	private Hashtable rates = new Hashtable();
 
 	public Money reduce(Expression source, String to) {
 		return source.reduce(this, to);
 	}
 
+	@SuppressWarnings("unchecked")
 	public void addRate(String from, String to, int rate) {
 		rates.put(new Pair(from, to), new Integer(rate));
 	}
